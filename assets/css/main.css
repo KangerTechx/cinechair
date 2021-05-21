@@ -1,0 +1,97 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+}
+
+
+body {
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/bg.jpg") no-repeat center/cover fixed;
+}
+
+header nav form button {
+    border-color: #980000 !important;
+    color: #980000 !important;
+}
+
+header nav form button:hover {
+    color: #fff !important;
+    background-color: #980000 !important;
+}
+
+.navbar-brand, i{
+    color: #980000 !important;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+.navbar-brand i {
+    margin-right: 5px;
+}
+
+.lost {
+    display: none;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 10vw !important;
+    color: #980000;
+}
+
+/* -- Cards Custom -- */
+
+.card {
+    width: 18rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+.size-img {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+}
+
+.card-image {
+    width: 90%;
+    height: 100%;
+}
+
+.card ul li{
+    color: #fff;
+    background-color:rgba(255, 255, 255, 0) ;
+}
+
+.yellow {
+    color: yellow !important;
+}
+
+.grey {
+    color: #757474 !important;
+}
+
+.card a {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: #980000;
+
+}
+
+.card a:hover {
+    color: #fff;
+}
