@@ -72,3 +72,42 @@ function bindSearch($dbh) {
 }
 
 
+// fonction affichage admin
+
+function adminSearch($dbh) {
+    global $stmt;
+    if(isset($_GET['search'])) {
+        $search = "SELECT * FROM bluray
+                   LEFT JOIN type ON type_id = t_id
+                   LEFT JOIN category ON cat_id = c_id
+                   WHERE name LIKE :search
+                   ORDER BY name";
+
+        $stmt = $dbh->prepare($search);
+        $stmt->bindValue('search', '%'.$_GET['search'].'%', PDO::PARAM_STR);
+        $stmt->execute();
+    } else {
+        if(isset($_GET['cat'])) {
+            $sql = "SELECT * FROM bluray
+                    LEFT JOIN type ON type_id = t_id
+                    LEFT JOIN category ON cat_id = c_id
+                    WHERE c_name = :cat 
+                    ORDER BY name";
+
+            $stmt = $dbh->prepare($sql);
+            $stmt->bindValue('cat', $_GET['cat'], PDO::PARAM_STR);
+            $stmt->execute();
+        } else {
+            $sql = "SELECT * FROM bluray
+                    LEFT JOIN type ON type_id = t_id
+                    LEFT JOIN category ON cat_id = c_id 
+                    ORDER BY name";
+            $stmt = $dbh->prepare($sql);
+            $stmt->execute();
+        }
+    }
+    return $stmt;
+}
+
+
+

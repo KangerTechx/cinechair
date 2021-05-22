@@ -1,6 +1,6 @@
 <?php
 
-$sql = "SELECT id, name, cover, price, t_name, c_name, release_date, note, description FROM bluray
+$sql = "SELECT * FROM bluray
         LEFT JOIN type ON type_id = t_id
         LEFT JOIN category ON cat_id = c_id
         WHERE id = :id";

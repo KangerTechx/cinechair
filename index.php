@@ -9,12 +9,8 @@ if (!isset($_GET['page'])) {
 
 require_once 'partials/header.php';
 
-if ($_GET['page'] == 'Film') {
-    require_once 'pages/film.php';
-} elseif ($_GET['page'] == 'Série') {
-    require_once 'pages/serie.php';
-} elseif ($_GET['page'] == 'Dessin-Animé') {
-    require_once 'pages/anime.php';
+if ($_GET['page'] == 'Film' || $_GET['page'] == 'Série' || $_GET['page'] == 'Dessin-Animé') {
+    require_once 'pages/type.php';
 } elseif ($_GET['page'] == 'detail') {
     require_once 'pages/detail.php';
 } else {

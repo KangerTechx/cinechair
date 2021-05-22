@@ -8,7 +8,7 @@ $blurays = $stmt->fetchAll();
     <h2 class="display-4 my-5 ps-4 ps-lg-5"><?= $_GET['page'] ?></h2>
         <?php if ($blurays): ?>
             <?php if(isset ($_GET['cat'])) : ?>
-                <p>Nous répertorons <?= count($blurays) ?> <?= $_GET['page'] ?> pour la catégorie <?= $_GET['cat'] ?> </p>
+                <p class="my-5 ps-4 ps-lg-5">Nous répertorions <?= count($blurays) ?> <?= $_GET['page'] ?> pour la catégorie <?= $_GET['cat'] ?> </p>
             <?php endif ?>
         <div class="row col-12 d-flex align-items-center justify-content-center py-2">
         <?php foreach($blurays as $bluray): ?>

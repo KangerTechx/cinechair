@@ -1,0 +1,54 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header nav form button {
+    border-color: #980000 !important;
+    color: #980000 !important;
+}
+
+header nav form button:hover {
+    color: #fff !important;
+    background-color: #980000 !important;
+}
+
+.navbar-brand, i{
+    color: #980000 !important;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+.navbar-brand i {
+    margin-right: 5px;
+}
+
+.lost {
+    display: none;
+}
+
+td img {
+    width: 75px;
+    height: 100px;
+}
+
+td .yellow {
+    color: #f6d500 !important;
+}
+
+td .grey {
+    color: #757474 !important;
+}
+
+.form-btn {
+    border-color: #980000 !important;
+    color: #980000 !important;
+}
+
+.form-btn:hover {
+    color: #fff !important;
+    background-color: #980000 !important;
+}
