@@ -34,7 +34,7 @@ $i = 1;
     <?php if(!isset($_GET['search'])): ?>
         <div class="branding d-flex flex-wrap">
             <div class=" title col-10 col-lg-6 offset-1 align-self-center">
-                <p class="display-6">Bienvenu sur</p>
+                <p class="display-6">Bienvenue sur</p>
                 <h1 class="display-6">Cinechair</h1>
             </div>
             <div class="col-12 col-lg-5 ps-5">
@@ -51,7 +51,7 @@ $i = 1;
                                     </div>
                                     <ul class="list-group list-group-flush">
                                         <li class="list-group-item">Prix: <?=$new->price ?> &euro;</li>
-                                        <li class="list-group-item">Sortie: <?=$new->release_date ?></li>
+                                        <li class="list-group-item">Sortie: <?=date("d-m-Y", strtotime("$new->release_date")) ?></li>
                                         <li class="list-group-item"><?= stars($new->note) ?></li>
                                     </ul>
                                     <div class="card-body">
@@ -82,7 +82,7 @@ $i = 1;
                                         </div>
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item">Prix: <?=$bluray->price ?> &euro;</li>
-                                            <li class="list-group-item">Sortie: <?=$bluray->release_date ?></li>
+                                            <li class="list-group-item">Sortie: <?=date("d-m-Y", strtotime("$bluray->release_date")) ?></li>
                                             <li class="list-group-item"><?= stars($bluray->note) ?></li>
                                         </ul>
                                         <div class="card-body">

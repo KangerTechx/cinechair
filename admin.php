@@ -13,8 +13,14 @@ require_once "partials/admin_header.php";
 
 if($_GET['action'] == 'editbluray') {
     require_once 'forms/editbluray.php';
-} elseif (($_GET['action'] == 'addsite')) {
-    require 'forms/addsite.php';
+} elseif ($_GET['action'] == 'addbluray') {
+    require 'forms/addbluray.php';
+} elseif ($_GET['action'] == 'categorys') {
+    require 'pages/admin_category.php';
+}elseif ($_GET['action'] == 'editcategory') {
+    require 'forms/editcategory.php';
+} elseif ($_GET['action'] == 'addcategory') {
+    require 'forms/addcategory.php';
 } else {
     require_once "pages/admin_home.php";
 }

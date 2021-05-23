@@ -21,7 +21,7 @@ $blurays = $stmt->fetchAll();
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Prix: <?=$bluray->price ?> &euro;</li>
-                        <li class="list-group-item">Sortie: <?=$bluray->release_date ?></li>
+                        <li class="list-group-item">Sortie: <?=date("d-m-Y", strtotime("$bluray->release_date")) ?></li>
                         <li class="list-group-item"><?= stars($bluray->note) ?></li>
                     </ul>
                     <div class="card-body">

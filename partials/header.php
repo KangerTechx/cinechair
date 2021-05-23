@@ -44,23 +44,19 @@ $categorys = $stmt->fetchAll();
                     <?php if($_GET['page'] == 'Film' || $_GET['page'] == 'Série' || $_GET['page'] == 'Dessin-Animé'): ?>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="?page=Film" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <?php if(!isset($_GET['cat'])) : ?>
-                                Catégories
-                                <?php else: ?>
-                                <?= $_GET['cat'] ?>
-                                <?php endif ?>
+                                <?= !isset($_GET['cat']) ? 'Catégories' : $_GET['cat'] ?>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li <?php if(!isset($_GET['cat'])) echo 'class="lost"' ?>><a class="dropdown-item" href="?page=<?= $_GET['page'] ?>>">Toutes les catégories</a></li>
+                                <li <?= !isset($_GET['cat']) ? 'class="lost"' : '' ?>><a class="dropdown-item" href="?page=<?= $_GET['page'] ?>">Toutes les catégories</a></li>
                                 <?php foreach ($categorys as $category): ?>
-                                <li <?php if(isset($_GET['cat']) && $_GET['cat'] == $category->c_name) echo 'class="lost"' ?>><a class="dropdown-item" href="?page=<?= $_GET['page'] ?>&cat=<?= $category->c_name?>"><?= $category->c_name?></a></li>
+                                <li <?= (isset($_GET['cat']) && $_GET['cat'] == $category->c_name) ? 'class="lost"' : '' ?>><a class="dropdown-item" href="?page=<?= $_GET['page'] ?>&cat=<?= $category->c_name?>"><?= $category->c_name?></a></li>
                                 <?php endforeach ?>
                             </ul>
                         </li>
                     <?php endif ?>
                 </ul>
                 <form class="d-flex" action="?" method="get">
-                    <input class="form-control me-2" type="search" <?php if(isset($_GET['search'])){ echo 'value='.$_GET['search'];} ?> name="search">
+                    <input class="form-control me-2" type="search" name="search" <?= isset($_GET['search']) ? 'value='.$_GET['search'] : '' ?>>
                     <button class="btn" type="submit">Search</button>
                 </form>
             </div>

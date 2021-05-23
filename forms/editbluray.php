@@ -43,7 +43,7 @@ $categories = $stmt->fetchAll();
                 <div class="form-group">
                     <label for="type" class="form-label">Catégorie du site</label>
                     <select name="type" id="type" class="form-control">
-                        <option value="">Sélectionnez...</option> // ?? mmmmmh a travailler pas afficher quand deja selectionné
+                        <option value="">Sélectionnez...</option>
                         <?php foreach($types as $type): ?>
                             <option value="<?= $type->t_id ?>"<?= $bluray->type_id == $type->t_id ? 'selected' : '' ?>><?= $type->t_name ?></option>
                         <?php endforeach ?>
@@ -53,19 +53,19 @@ $categories = $stmt->fetchAll();
                     <label for="category" class="form-label">Catégorie du site</label>
                     <select name="category" id="category" class="form-control">
                         <option value="">Sélectionnez...</option>
-                        <?php foreach($categories as $category): ?> // ?? mmmmmh a travailler pas afficher quand deja selectionné
+                        <?php foreach($categories as $category): ?>
                             <option value="<?= $category->c_id ?>"<?= $bluray->cat_id == $category->c_id ? 'selected' : '' ?>><?= $category->c_name ?></option>
                         <?php endforeach ?>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="date" class="form-label">Nom du Bluray</label>
+                    <label for="date" class="form-label">Date de sortie</label>
                     <input type="date" class="form-control" id="date" name="date" value="<?= $bluray->release_date ?>">
                 </div>
                 <div class="form-group">
                     <label for="note" class="form-label">Evaluation du bluray</label>
                     <select name="note" id="note" class="form-control">
-                        <option value="<?= $bluray->note ?>"></option> // ?? mmmmmh a travailler pas afficher quand deja selectionné
+                        <option value="<?= $bluray->note ?>"></option>
                         <?php for($i = 1; $i <= 5; $i++): ?>
                             <option value="<?= $i ?>" <?= $bluray->note == $i ? 'selected' : '' ?>><?= $i ?></option>
                         <?php endfor ?>

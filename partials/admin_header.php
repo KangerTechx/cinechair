@@ -34,28 +34,7 @@ $categorys = $stmt->fetchAll();
                         <a class="nav-link" href="?action=admin">Blurays</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Genre</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Cat</a>
-                    </li>
-                </ul>
-
-                <ul class="navbar-nav me-4 mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="?page=Film" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <?php if(!isset($_GET['cat'])) : ?>
-                                Catégories
-                            <?php else: ?>
-                                <?= $_GET['cat'] ?>
-                            <?php endif ?>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li <?php if(!isset($_GET['cat'])) echo 'class="lost"' ?>><a class="dropdown-item" href="?page=<?= $_GET['page'] ?>">Toutes les catégories</a></li>
-                            <?php foreach ($categorys as $category): ?>
-                                <li <?php if(isset($_GET['cat']) && $_GET['cat'] == $category->c_name) echo 'class="lost"' ?>><a class="dropdown-item" href="?page=<?= $_GET['page'] ?>&cat=<?= $category->c_name?>"><?= $category->c_name?></a></li>
-                            <?php endforeach ?>
-                        </ul>
+                        <a class="nav-link" href="?action=categorys">Catégories</a>
                     </li>
                 </ul>
 

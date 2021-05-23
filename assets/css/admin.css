@@ -52,3 +52,27 @@ td .grey {
     color: #fff !important;
     background-color: #980000 !important;
 }
+
+td a {
+    text-decoration: none !important;
+}
+
+.green {
+    color: #34bc03 !important;
+}
+
+.pencil-grey {
+    color: #303030 !important;
+}
+
+.pencil-grey:hover {
+    color: #34bc03 !important;
+}
+
+.trash-grey {
+    color: #303030 !important;
+}
+
+.trash-grey:hover {
+    color: #980000 !important;
+}

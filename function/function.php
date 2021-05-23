@@ -87,13 +87,32 @@ function adminSearch($dbh) {
         $stmt->bindValue('search', '%'.$_GET['search'].'%', PDO::PARAM_STR);
         $stmt->execute();
     } else {
-        if(isset($_GET['cat'])) {
+        if(isset($_GET['genre']) && isset($_GET['cat'])) {
             $sql = "SELECT * FROM bluray
                     LEFT JOIN type ON type_id = t_id
                     LEFT JOIN category ON cat_id = c_id
-                    WHERE c_name = :cat 
+                    WHERE t_name = :genre AND c_name = :cat 
                     ORDER BY name";
 
+            $stmt = $dbh->prepare($sql);
+            $stmt->bindValue('genre', $_GET['genre'], PDO::PARAM_STR);
+            $stmt->bindValue('cat', $_GET['cat'], PDO::PARAM_STR);
+            $stmt->execute();
+        } elseif(isset($_GET['genre'])) {
+            $sql = "SELECT * FROM bluray
+                    LEFT JOIN type ON type_id = t_id
+                    LEFT JOIN category ON cat_id = c_id 
+                    WHERE t_name = :genre
+                    ORDER BY name";
+            $stmt = $dbh->prepare($sql);
+            $stmt->bindValue('genre', $_GET['genre'], PDO::PARAM_STR);
+            $stmt->execute();
+        } elseif (isset($_GET['cat'])) {
+            $sql = "SELECT * FROM bluray
+                    LEFT JOIN type ON type_id = t_id
+                    LEFT JOIN category ON cat_id = c_id 
+                    WHERE c_name = :cat
+                    ORDER BY name";
             $stmt = $dbh->prepare($sql);
             $stmt->bindValue('cat', $_GET['cat'], PDO::PARAM_STR);
             $stmt->execute();
