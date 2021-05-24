@@ -13,6 +13,10 @@ if ($_GET['page'] == 'Film' || $_GET['page'] == 'Série' || $_GET['page'] == 'De
     require_once 'pages/type.php';
 } elseif ($_GET['page'] == 'detail') {
     require_once 'pages/detail.php';
+} elseif ($_GET['page'] == 'login') {
+    require_once 'pages/login.php';
+} elseif ($_GET['page'] == 'register') {
+    require_once 'forms/adduser.php';
 } else {
     require_once 'pages/home.php';
 }

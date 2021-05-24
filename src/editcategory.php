@@ -11,4 +11,4 @@ $stmt->bindValue('id', $_POST['id'], PDO::PARAM_INT);
 $stmt->bindValue('category', $_POST['category'], PDO::PARAM_STR);
 $stmt->execute();
 
-header('location:..//admin?action=categorys');
+header('location:../admin?action=categorys');

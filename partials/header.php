@@ -55,6 +55,11 @@ $categorys = $stmt->fetchAll();
                         </li>
                     <?php endif ?>
                 </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item users-logo me-2">
+                        <a href="?page=login" class="nav-link"><i class="bi bi-person-circle"></i></a>
+                    </li>
+                </ul>
                 <form class="d-flex" action="?" method="get">
                     <input class="form-control me-2" type="search" name="search" <?= isset($_GET['search']) ? 'value='.$_GET['search'] : '' ?>>
                     <button class="btn" type="submit">Search</button>

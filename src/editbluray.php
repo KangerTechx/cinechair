@@ -19,4 +19,4 @@ $stmt->bindValue('description', $_POST['description'], PDO::PARAM_STR);
 
 $stmt->execute();
 
-header('location:..//admin.php');
+header('location:../admin.php');

@@ -11,6 +11,9 @@ body {
     background:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/bg.jpg") no-repeat center/cover fixed;
 }
 
+
+/* -- HEADER CUSTOM -- */
+
 header nav form button {
     border-color: #980000 !important;
     color: #980000 !important;
@@ -36,6 +39,15 @@ header nav form button:hover {
 
 .lost {
     display: none;
+}
+
+ul .users-logo i {
+    font-size: 1.4rem;
+    color: #fff !important;
+}
+
+.users-logo i:hover {
+    color: #980000 !important;
 }
 
 .title {
@@ -94,4 +106,133 @@ h1 {
 
 .card a:hover {
     color: #fff;
+}
+
+
+/* -- CUSTOM LOGIN FORM -- */
+
+.form {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 50px !important;
+}
+
+.formCustom {
+    width: 75%;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.formCustom input {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    padding-top: 15px;
+    border: none;
+    outline: none;
+}
+
+.formCustom label {
+    position: absolute;
+    bottom : 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid #353535 ;
+}
+
+.formCustom label::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 100%;
+    width: 100%;
+    border-bottom: 1px solid #980000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+
+.labelContent {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+/*ANIMATION INPUT + LABEL */
+.formCustom input:focus + .label .labelContent,
+.formCustom input:valid + .label .labelContent {
+    transform: translateY(-100%);
+    font-size: 0.9em;
+    color: #980000;
+}
+
+.formCustom input:focus + .label::after,
+.formCustom input:valid + .label::after {
+    transform: translateX(0%);
+}
+
+
+
+/* BUTTON */
+.form button {
+    border-color: #980000 !important;
+    color: #980000 !important;
+}
+
+.form button:hover {
+    color: #fff !important;
+    background-color: #980000 !important;
+}
+
+
+/* CHROME AUTOCOMPLETION FIX */
+
+.formCustom input:-webkit-autofill,
+.formCustom input:-webkit-autofill:hover,
+.formCustom input:-webkit-autofill:focus,
+.formCustom input:-webkit-autofill:active  {
+    transition: background-color 5000s;
+    -webkit-text-fill-color: #fff !important;
+}
+
+
+.form-container p a {
+    color: #980000;
+    text-decoration: none;
+}
+
+.form-container p a:hover {
+    color: #720101;
+}
+
+#adduser {
+    margin-bottom: 50px;
+}
+
+#adduser label {
+    margin-top: 20px;
+}
+
+#adduser input {
+    background-color: #e0e0e0;
+}
+
+#adduser option {
+    background-color: #353535;
+}
+
+.form-btn {
+    border-color: #980000 !important;
+    background-color: transparent !important;
+    color: #980000 !important;
+}
+
+.form-btn:hover {
+    color: #fff !important;
+    background-color: #980000 !important;
 }

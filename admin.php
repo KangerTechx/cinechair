@@ -21,6 +21,10 @@ if($_GET['action'] == 'editbluray') {
     require 'forms/editcategory.php';
 } elseif ($_GET['action'] == 'addcategory') {
     require 'forms/addcategory.php';
+} elseif ($_GET['action'] == 'users') {
+    require 'pages/admin_users.php';
+} elseif ($_GET['action'] == 'edituser') {
+    require 'forms/edituser.php';
 } else {
     require_once "pages/admin_home.php";
 }

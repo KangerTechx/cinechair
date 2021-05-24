@@ -36,6 +36,9 @@ $categorys = $stmt->fetchAll();
                     <li class="nav-item">
                         <a class="nav-link" href="?action=categorys">Catégories</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?action=users">Utilisateurs</a>
+                    </li>
                 </ul>
 
                 <form class="d-flex" action="?" method="get">
