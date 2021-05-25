@@ -14,7 +14,11 @@ function stars(int $eval): void {
 }
 
 
+// fonction nettoyage espace mot de passe
 
+function cleaner($password) {
+    return preg_replace('" "', '',$password);
+}
 
 // fonction search simple
 

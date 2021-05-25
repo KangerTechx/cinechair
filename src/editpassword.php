@@ -1,6 +1,7 @@
 <?php
 
 require_once '../function/db.php';
+require_once '../function/function.php';
 $dbh = connect();
 
 $sql = "SELECT id, password FROM users WHERE id = :id";
@@ -16,7 +17,7 @@ if (password_verify($_POST['password'], $user->password)) {
 
         $stmt = $dbh->prepare($sql);
         $stmt->bindValue('id', $_POST['id'], PDO::PARAM_INT);
-        $stmt->bindValue('password', password_hash($_POST['newPassword'], PASSWORD_DEFAULT), PDO::PARAM_STR);
+        $stmt->bindValue('password', password_hash(cleaner($_POST['newPassword']), PASSWORD_DEFAULT), PDO::PARAM_STR);
 
         $stmt->execute();
 

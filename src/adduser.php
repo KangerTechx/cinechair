@@ -1,6 +1,7 @@
 <?php
 
 require_once '../function/db.php';
+require_once '../function/function.php';
 $dbh = connect();
 
 $sql = "SELECT email FROM users WHERE email = :email";
@@ -26,7 +27,7 @@ if($mail) {
     $stmt->bindValue('profil', $_POST['profil'], PDO::PARAM_STR);
     $stmt->bindValue('email', $_POST['email'], PDO::PARAM_STR);
     $stmt->bindValue('query', $_POST['query'], PDO::PARAM_STR);
-    $stmt->bindValue('reply', password_hash($_POST['reply'], PASSWORD_DEFAULT), PDO::PARAM_STR);
+    $stmt->bindValue('reply', password_hash(cleaner($_POST['reply']), PASSWORD_DEFAULT), PDO::PARAM_STR);
     $stmt->execute();
 
     header('location:../?page=login');

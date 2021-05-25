@@ -1,6 +1,7 @@
 <?php
 
 require_once '../function/db.php';
+require_once '../function/function.php';
 $dbh = connect();
 
 
@@ -27,7 +28,7 @@ if($mail) {
     $stmt->bindValue('profil', $_POST['profil'], PDO::PARAM_STR);
     $stmt->bindValue('name', $_POST['name'], PDO::PARAM_STR);
     $stmt->bindValue('first', $_POST['first'], PDO::PARAM_STR);
-    $stmt->bindValue('password', password_hash($_POST['password'], PASSWORD_DEFAULT), PDO::PARAM_STR);
+    $stmt->bindValue('password', password_hash(cleaner($_POST['password']), PASSWORD_DEFAULT), PDO::PARAM_STR);
     $stmt->bindValue('email', $_POST['email'], PDO::PARAM_STR);
     $stmt->bindValue('status', $_POST['status'], PDO::PARAM_INT);
     $stmt->execute();
