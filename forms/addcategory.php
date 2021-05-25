@@ -1,7 +1,7 @@
 
-<section id="addcategory">
+<section id="addcategory" class="container">
         <div class="row">
-            <div class="col-md-8 offset-2">
+            <div class="col-md-8 offset-md-2">
                 <h2 class="display-5 my-5">Ajout d'une catégorie</h2>
                 <form action="src/addcategory.php" method="post">
                     <div class="form-group">

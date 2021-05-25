@@ -3,7 +3,6 @@
 <section class="mt-5">
         <div class="d-flex flex-wrap">
             <div class="col-12 col-lg-5 offset-1 mt-5">
-                <p class="display-6">Bienvenue sur</p>
                 <h1 class="display-4">Cinechair</h1>
             </div>
             <div class="form container col-12 col-lg-5 mt-5">
@@ -11,7 +10,7 @@
                     <h2 class=" my-4 titleCustom">Se connecter</h2>
                 </div>
                 <div class="form-container">
-                    <form action="#" method="post" class="col-12 col-md-10">
+                    <form action="src/login.php" method="post" class="col-12 col-md-10">
                         <div class="form-group formCustom mb-3">
                             <input type="email" name="email" id="email" required>
                             <label for="email" class="label">

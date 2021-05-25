@@ -3,6 +3,8 @@
 require_once '../function/db.php';
 $dbh = connect();
 
+
+
 $sql = "INSERT INTO bluray (name, type_id, cat_id, price, release_date, note, cover, description) VALUES (:name, :type, :category, :price, :date, :note, :cover, :description)";
 
 $stmt = $dbh->prepare($sql);
@@ -12,9 +14,17 @@ $stmt->bindValue('category', $_POST['category'], PDO::PARAM_INT);
 $stmt->bindValue('price', $_POST['price'], PDO::PARAM_INT);
 $stmt->bindValue('date', $_POST['date'], PDO::PARAM_STR);
 $stmt->bindValue('note', $_POST['note'], PDO::PARAM_INT);
-$stmt->bindValue('cover', $_POST['cover'], PDO::PARAM_STR);
+$stmt->bindValue('cover', !empty($_FILES['cover']['name']) ? $_FILES['cover']['name'] : 'default.svg');
 $stmt->bindValue('description', $_POST['description'], PDO::PARAM_STR);
 
 $stmt->execute();
 
-header('location:../admin.php');
+if (!empty($_FILES['cover']['name'])) {
+    if(move_uploaded_file($_FILES['cover']['tmp_name'], '../assets/img/cover/'.$_FILES['cover']['name'])) {
+        header('location: ../admin.php');
+    } else {
+        echo 'Le fichier n\'a pas pu être téléchargé';
+    }
+} else {
+    header('location: ../admin.php');
+}

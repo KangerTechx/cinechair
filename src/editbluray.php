@@ -7,7 +7,7 @@ $sql = "UPDATE bluray SET cover = :cover, name = :name, price = :price, type_id 
 
 $stmt = $dbh->prepare($sql);
 $stmt->bindValue('id', $_POST['id'], PDO::PARAM_INT);
-$stmt->bindValue('cover', $_POST['cover'], PDO::PARAM_STR);
+$stmt->bindValue('cover', !empty($_FILES['newCover']['name']) ? $_FILES['newCover']['name'] : $_POST['cover']);
 $stmt->bindValue('name', $_POST['name'], PDO::PARAM_STR);
 $stmt->bindValue('price', $_POST['price'], PDO::PARAM_INT);
 $stmt->bindValue('type', $_POST['type'], PDO::PARAM_INT);
@@ -19,4 +19,12 @@ $stmt->bindValue('description', $_POST['description'], PDO::PARAM_STR);
 
 $stmt->execute();
 
-header('location:../admin.php');
+if (!empty($_FILES['newCover']['name'])) {
+    if(move_uploaded_file($_FILES['newCover']['tmp_name'], '../assets/img/cover/'.$_FILES['newCover']['name'])) {
+        header('location: ../admin.php');
+    } else {
+        echo 'Le fichier n\'a pas pu être téléchargé';
+    }
+} else {
+    header('location: ../admin.php');
+}

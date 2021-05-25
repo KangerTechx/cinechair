@@ -30,6 +30,26 @@ header nav form button:hover {
     display: none;
 }
 
+.user-profil {
+    width: 30px;
+    height: auto;
+    border-radius: 50%;
+}
+.user-profil:hover {
+    border: 2px solid #000;
+}
+
+.user-name {
+    color: #000 !important;
+}
+hr {
+    margin: 5px;
+}
+
+.user-icon i {
+    color: #353535 !important;
+}
+
 td img {
     width: 75px;
     height: 100px;
@@ -51,6 +71,13 @@ td .grey {
 .form-btn:hover {
     color: #fff !important;
     background-color: #980000 !important;
+}
+
+
+/* -- Custom table -- */
+
+.link {
+    text-decoration: none;
 }
 
 td a {
@@ -76,3 +103,22 @@ td a {
 .trash-grey:hover {
     color: #980000 !important;
 }
+
+
+/* -- Custom EDIT BLURAY -- */
+
+.edit-img {
+    height: 400px;
+    width: auto;
+}
+
+.title-label {
+    font-size: 1.4rem;
+}
+
+.edit-profil {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+

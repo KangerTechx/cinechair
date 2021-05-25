@@ -50,6 +50,29 @@ ul .users-logo i {
     color: #980000 !important;
 }
 
+.user-profil {
+    width: 30px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.user-profil:hover {
+    border: 2px solid #000;
+}
+
+.user-name {
+    color: #000 !important;
+}
+hr {
+    margin: 5px;
+}
+
+.user-icon i {
+    color: #353535 !important;
+}
+
+
+
 .title {
     display: flex;
     flex-direction: column;
@@ -57,6 +80,7 @@ ul .users-logo i {
 }
 
 h1 {
+    font-family: 'Great Vibes', cursive;
     font-size: 10vw !important;
     color: #980000;
 }
@@ -235,4 +259,33 @@ h1 {
 .form-btn:hover {
     color: #fff !important;
     background-color: #980000 !important;
+}
+
+
+/* -- Edit profil user -- */
+
+.title-label {
+    font-size: 1.4rem;
+}
+
+.edit-profil {
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    border: 5px solid #353535;
+}
+
+.pass-validity {
+    color: #cd0000 !important;
+}
+
+.link {
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: #980000;
+}
+
+.link:hover {
+    color: #980000;
+    text-decoration: underline;
 }

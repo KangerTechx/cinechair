@@ -40,7 +40,20 @@ $categorys = $stmt->fetchAll();
                         <a class="nav-link" href="?action=users">Utilisateurs</a>
                     </li>
                 </ul>
-
+                <ul class="navbar-nav " >
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="?page=Film" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="assets/img/profil/<?= $_SESSION['profil'] ?>" class="user-profil">
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li class="user-icon"><i class="bi bi-person-circle mx-2"></i><span class="user-name"><?= $_SESSION['name'].' '. $_SESSION['first-name'] ?></span></li>
+                            <hr>
+                            <li class="user-icon"><a class="dropdown-item" href="/cinechair/"><i class="bi bi-door-open me-2"></i>Retour au site</a></li>
+                            <li class="user-icon"><a class="dropdown-item" href="/cinechair/?page=user"><i class="bi bi-gear me-2"></i>Paramètres</a></li>
+                            <li class="user-icon"><a class="dropdown-item" href="src/disconnect.php"><i class="bi bi-power me-2"></i>Déconnexion</a></li>
+                        </ul>
+                    </li>
+                </ul>
                 <form class="d-flex" action="?" method="get">
                     <input class="form-control me-2" type="search" <?php if(isset($_GET['search'])){ echo 'value='.$_GET['search'];} ?> name="search">
                     <button class="btn" type="submit">Search</button>

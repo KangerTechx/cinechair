@@ -16,6 +16,9 @@ $categorys = $stmt->fetchAll();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Links google font   -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <!--  Bootstrap links  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -55,11 +58,30 @@ $categorys = $stmt->fetchAll();
                         </li>
                     <?php endif ?>
                 </ul>
+                <?php if(!isset($_SESSION['email'])) : ?>
                 <ul class="navbar-nav">
                     <li class="nav-item users-logo me-2">
                         <a href="?page=login" class="nav-link"><i class="bi bi-person-circle"></i></a>
                     </li>
                 </ul>
+                <?php else : ?>
+                    <ul class="navbar-nav " >
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="?page=Film" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="assets/img/profil/<?= $_SESSION['profil'] ?>" class="user-profil">
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li class="user-icon"><i class="bi bi-person-circle mx-2"></i><span class="user-name"><?= $_SESSION['name'].' '. $_SESSION['first-name'] ?></span></li>
+                                <hr>
+                                <?php if(isset($_SESSION['status'])) : ?>
+                                    <li class="user-icon"><a class="dropdown-item" href="admin"><i class="bi bi-door-open me-2"></i>Administration</a></li>
+                                <?php endif ?>
+                                <li class="user-icon"><a class="dropdown-item" href="?page=user"><i class="bi bi-gear me-2"></i>Paramètres</a></li>
+                                <li class="user-icon"><a class="dropdown-item" href="src/disconnect.php"><i class="bi bi-power me-2"></i>Déconnexion</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                <?php endif ?>
                 <form class="d-flex" action="?" method="get">
                     <input class="form-control me-2" type="search" name="search" <?= isset($_GET['search']) ? 'value='.$_GET['search'] : '' ?>>
                     <button class="btn" type="submit">Search</button>

@@ -7,6 +7,8 @@ if (!isset($_GET['page'])) {
     $_GET['page'] = 'home';
 }
 
+session_start();
+
 require_once 'partials/header.php';
 
 if ($_GET['page'] == 'Film' || $_GET['page'] == 'Série' || $_GET['page'] == 'Dessin-Animé') {
@@ -17,6 +19,10 @@ if ($_GET['page'] == 'Film' || $_GET['page'] == 'Série' || $_GET['page'] == 'De
     require_once 'pages/login.php';
 } elseif ($_GET['page'] == 'register') {
     require_once 'forms/adduser.php';
+} elseif ($_GET['page'] == 'user') {
+    require_once 'forms/edituser.php';
+} elseif ($_GET['page'] == 'error') {
+    require_once 'pages/error.php';
 } else {
     require_once 'pages/home.php';
 }

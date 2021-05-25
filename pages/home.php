@@ -34,7 +34,6 @@ $i = 1;
     <?php if(!isset($_GET['search'])): ?>
         <div class="branding d-flex flex-wrap">
             <div class=" title col-10 col-lg-6 offset-1 align-self-center">
-                <p class="display-6">Bienvenue sur</p>
                 <h1 class="display-6">Cinechair</h1>
             </div>
             <div class="col-12 col-lg-5 ps-5">

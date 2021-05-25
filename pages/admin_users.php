@@ -2,6 +2,7 @@
 
 $sql = "SELECT * FROM users
         LEFT JOIN status ON status_id = s_id";
+isset($_GET['order']) ? $sql .= " ORDER BY name DESC" : '';
 
 $stmt = $dbh->prepare($sql);
 $stmt->execute();
@@ -12,13 +13,13 @@ $users = $stmt->fetchAll();
 <section class="container">
     <h2 class="display-5 my-4">Gestion des Utilisateurs</h2>
     <p>Nombre d'utilisateurs: <?= count($users) ?></p>
-    <div class="row ">
-        <div class="col-md-12">
-            <table class="table table-hover">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-hover col-6">
                 <thead>
                 <tr>
                     <th>Photo</th>
-                    <th>Nom</th>
+                    <th><a <?= !isset($_GET['order']) ? 'href="?action=users&order=desc"' : 'href="?action=users"' ?> class="link">Nom</a></th>
                     <th>Prénom</th>
                     <th>Email</th>
                     <th>Status</th>
@@ -30,7 +31,7 @@ $users = $stmt->fetchAll();
                 <tbody>
                 <?php foreach($users as $user) : ?>
                     <tr>
-                        <td><img src="assets/img/profil/<?= $user->profil ?>" alt="<?= $user->name ?>"></td>
+                        <td><img src="assets/img/profil/<?= $user->profil ?>" alt="<?= $user->name ?>" class="edit-profil"></td>
                         <td><?= $user->name ?></td>
                         <td><?= $user->first_name ?></td>
                         <td><?= $user->email ?></td>

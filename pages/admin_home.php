@@ -99,7 +99,7 @@ $blurays = $stmt->fetchAll();
                             <tr>
                                 <th>Cover</th>
                                 <th>Nom</th>
-                                <th>
+                                <th class="m-0 p-0">
                                     <ul class="navbar-nav me-4 mb-2 mb-lg-0">
                                         <li class="nav-item dropdown">
                                             <a class="nav-link dropdown-toggle" href="?page=Film" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -116,7 +116,7 @@ $blurays = $stmt->fetchAll();
                                         </li>
                                     </ul>
                                 </th>
-                                <th>
+                                <th class="my-0 py-0">
                                     <ul class="navbar-nav me-4 mb-2 mb-lg-0">
                                         <li class="nav-item dropdown">
                                             <a class="nav-link dropdown-toggle" href="?page=Film" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
