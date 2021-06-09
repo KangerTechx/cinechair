@@ -36,9 +36,11 @@ $categorys = $stmt->fetchAll();
                     <li class="nav-item">
                         <a class="nav-link" href="?action=categorys">Catégories</a>
                     </li>
+                    <?php if($_SESSION['status'] == 'Big Boss') : ?>
                     <li class="nav-item">
                         <a class="nav-link" href="?action=users">Utilisateurs</a>
                     </li>
+                    <?php endif ?>
                 </ul>
                 <ul class="navbar-nav " >
                     <li class="nav-item dropdown">

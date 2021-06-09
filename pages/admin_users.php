@@ -2,7 +2,7 @@
 
 $sql = "SELECT * FROM users
         LEFT JOIN status ON status_id = s_id";
-isset($_GET['order']) ? $sql .= " ORDER BY name DESC" : '';
+isset($_GET['order']) ? $sql .= " ORDER BY name DESC" : $sql .=" ORDER BY name ASC";
 
 $stmt = $dbh->prepare($sql);
 $stmt->execute();

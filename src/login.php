@@ -24,7 +24,7 @@ if($login) {
                 'profil'        => $login->profil
             ];
 
-        if($login->s_name == 'Admin') {
+        if($login->s_name == 'Admin' || $login->s_name == 'Big Boss') {
             $_SESSION += ['status' => $login->s_name];
         }
         header('location: ../');
