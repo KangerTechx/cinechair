@@ -19,7 +19,7 @@ function sendMail($mail, $newPassword) {
     $subject = $temp_subject;
 
 
-    $temp_content = test_input('Votre nouveau mot de passe est :'. $newPassword);
+    $temp_content = test_input('Votre nouveau mot de passe est : '. $newPassword);
 
     $content = wordwrap($temp_content,69, '\n', true);
 
