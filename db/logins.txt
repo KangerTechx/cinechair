@@ -4,13 +4,23 @@ Identifiants Users
 
 sbblache@gmail.com
 password
+reply : Theteacher01ofcourse
 
+---------------------------------------------------
 
 patrickmarthus@gmail.com
 password
+reply : symfony
+
+----------------------------------------------------
 
 petitjean@gmail.com
 password
+reply : Gertrude
+
+-----------------------------------------------------
 
 tanguyforever@gmail.com
 test
+reply : les femmes 
+

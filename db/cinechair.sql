@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 25 mai 2021 à 22:12
+-- Généré le : jeu. 10 juin 2021 à 21:56
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.4.9
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `bluray` (
   PRIMARY KEY (`id`),
   KEY `type_id` (`type_id`),
   KEY `cat_id` (`cat_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `bluray`
@@ -206,7 +206,7 @@ CREATE TABLE IF NOT EXISTS `status` (
   `s_id` int(11) NOT NULL AUTO_INCREMENT,
   `s_name` varchar(50) NOT NULL,
   PRIMARY KEY (`s_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `status`
@@ -214,7 +214,8 @@ CREATE TABLE IF NOT EXISTS `status` (
 
 INSERT INTO `status` (`s_id`, `s_name`) VALUES
 (1, 'Admin'),
-(2, 'Utilisateur');
+(2, 'Utilisateur'),
+(3, 'Big Boss');
 
 -- --------------------------------------------------------
 
@@ -259,17 +260,17 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `email` (`email`),
   KEY `status_id` (`status_id`),
   KEY `query_id` (`query_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `first_name`, `password`, `status_id`, `profil`, `email`, `query_id`, `reply`) VALUES
-(1, 'Blache', 'Sébastien', '$2y$10$lHIlN0g6MuoHJcBBoDVLHe6akz2tRBfjU9rY8IxrLu5j.nSz6PYIm', 1, 'amitie.jpg', 'sbblache@gmail.com', 1, 'Theteacher01ofcourse'),
-(2, 'Petit', 'Jean', '$2y$10$N9hAYdmpxX3HgLWa2PrV3ONeEyVab./pfbV39A8BwFImJa9cX/bfe', 2, 'jean.png', 'petitjean@gmail.com', 5, '$2y$10$z8dXcVYb//WJMTjfqfBqyOuDyFKQPqNCdRU55RDTng9NO.O6da0PO'),
-(4, 'Marthus', 'Patrick', '$2y$10$GLLgX2Z3op/.sOtFMmy6Uu3B2wrGm54zvHq8IfsnOdDvSFt5FpZ/C', 1, 'php-leader.jpg', 'patrickmarthus@gmail.com', 4, '$2y$10$m6C7hiAQGucd4qppB8jnI./qQ/Py82Uxp32k72IdMjO4cnav0v1H2'),
-(12, 'Forever', 'Tanguy', '$2y$10$T6WE3F15JY2alVeFnu4zKedtKY2Ta41u7Bi7jD56mDh1h5S9RmaXu', 2, 'images.jfif', 'tanguyforever@gmail.com', 3, '$2y$10$uyzMsPFD09NRrtpb22CnRe7w61/gUn7cp4CoiEnvhBcgoy.dR.MCC');
+(1, 'Blache', 'Sébastien', '$2y$10$epApnN9QkSSmlJA3U0Xz6er26J8hcQLIAinZB3BImr3/bO3bEQiEO', 3, 'amitie.jpg', 'sbblache@gmail.com', 1, '$2y$10$edHI0EM1XNODlKMbdD3jqOKWEBv8O.fLPOrOrjC5VN05IZ2YRGkBy'),
+(2, 'Petit', 'Jean', '$2y$10$0kT6hJor4HKZSyFKTcIml.sdPwUvF9b89cwnwfBq1sut969wmxpmq', 1, 'jean.png', 'petitjean@gmail.com', 5, '$2y$10$z8dXcVYb//WJMTjfqfBqyOuDyFKQPqNCdRU55RDTng9NO.O6da0PO'),
+(4, 'Marthus', 'Patrick', '$2y$10$H1n5c0z6/QRLGeX2qb2nDOEaHfrT4ZAGgiMcwJgvI4udGiTkUarSO', 3, 'php-leader.jpg', 'patrickmarthus@gmail.com', 4, '$2y$10$m6C7hiAQGucd4qppB8jnI./qQ/Py82Uxp32k72IdMjO4cnav0v1H2'),
+(12, 'Forever', 'Tanguy', '$2y$10$VWjUEblO5QPQJQYpt3LhM.rLNyAvM5zZNB1SutHgt90vzIx1s6bee', 2, 'images.jfif', 'tanguyforever@gmail.com', 3, '$2y$10$uyzMsPFD09NRrtpb22CnRe7w61/gUn7cp4CoiEnvhBcgoy.dR.MCC');
 
 --
 -- Contraintes pour les tables déchargées
