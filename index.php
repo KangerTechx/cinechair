@@ -21,6 +21,10 @@ if ($_GET['page'] == 'Film' || $_GET['page'] == 'Série' || $_GET['page'] == 'De
     require_once 'forms/adduser.php';
 } elseif ($_GET['page'] == 'user') {
     require_once 'forms/edituser.php';
+} elseif ($_GET['page'] == 'forgot') {
+    require_once 'pages/forgot.php';
+} elseif ($_GET['page'] == 'recup') {
+    require_once 'pages/recup_forgot.php';
 } elseif ($_GET['page'] == 'error') {
     require_once 'pages/error.php';
 } else {

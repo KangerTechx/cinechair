@@ -29,7 +29,7 @@
                         </div>
                         <button type="submit" class="btn">Connexion</button>
                     </form>
-                    <p class="mt-5"><a href="?">Mot de passe oublié ?</a></p>
+                    <p class="mt-5"><a href="?page=forgot">Mot de passe oublié ?</a></p>
                     <p class="mt-2">Pas encore de compte ? <a href="?page=register"> S'enregistrer</a></p>
                 </div>
             </div>
