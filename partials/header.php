@@ -73,7 +73,7 @@ $categorys = $stmt->fetchAll();
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li class="user-icon"><i class="bi bi-person-circle mx-2"></i><span class="user-name"><?= $_SESSION['name'].' '. $_SESSION['first-name'] ?></span></li>
                                 <hr>
-                                <?php if(isset($_SESSION['status'])) : ?>
+                                <?php if($_SESSION['status'] == 'Admin' || $_SESSION['status'] == 'Big Boss') : ?>
                                     <li class="user-icon"><a class="dropdown-item" href="admin"><i class="bi bi-door-open me-2"></i>Administration</a></li>
                                 <?php endif ?>
                                 <li class="user-icon"><a class="dropdown-item" href="?page=user"><i class="bi bi-gear me-2"></i>Paramètres</a></li>

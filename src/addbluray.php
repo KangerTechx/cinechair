@@ -2,7 +2,13 @@
 
 require_once '../function/db.php';
 $dbh = connect();
+session_start();
 
+if(empty($_SESSION['status'])) {
+    header('location: ../cinechair/?page=login');
+} elseif ($_SESSION['status'] == 'Utilisateur') {
+    header('location: ../cinechair/');
+}
 
 
 $sql = "INSERT INTO bluray (name, type_id, cat_id, price, release_date, note, cover, description) VALUES (:name, :type, :category, :price, :date, :note, :cover, :description)";

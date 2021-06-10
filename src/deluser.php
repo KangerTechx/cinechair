@@ -3,6 +3,11 @@
 require_once '../function/db.php';
 
 $dbh = connect();
+session_start();
+
+if ($_SESSION['status'] !== "Big Boss" ) {
+    header('location: ../cinechair/');
+}
 
 $sql = "DELETE FROM users WHERE id = :id";
 

@@ -4,6 +4,14 @@
 require_once '../function/db.php';
 $dbh = connect();
 
+session_start();
+
+if(empty($_SESSION['status'])) {
+    header('location: ../cinechair/?page=login');
+} elseif ($_SESSION['status'] == 'Utilisateur') {
+    header('location: ../cinechair/');
+}
+
 $sql = "UPDATE category SET c_name = :category WHERE c_id = :id";
 
 $stmt = $dbh->prepare($sql);

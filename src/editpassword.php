@@ -4,6 +4,12 @@ require_once '../function/db.php';
 require_once '../function/function.php';
 $dbh = connect();
 
+session_start();
+
+if(empty($_SESSION['status'])) {
+    header('location: ../cinechair/?page=login');
+}
+
 $sql = "SELECT id, password FROM users WHERE id = :id";
 
 $stmt = $dbh->prepare($sql);

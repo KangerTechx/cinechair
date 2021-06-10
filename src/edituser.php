@@ -1,7 +1,13 @@
 <?php
 session_start();
+
+if(empty($_SESSION['status'])) {
+    header('location: ../cinechair/?page=login');
+}
 require_once '../function/db.php';
 $dbh = connect();
+
+
 
 $sql = "SELECT id, profil FROM users 
         WHERE id = :id";

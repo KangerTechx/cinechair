@@ -11,11 +11,13 @@ if (!isset($_GET['action'])) {
 
 session_start();
 
-if (!isset($_SESSION['email']) && !isset($_SESSION['status'])) {
+if(empty($_SESSION['status'])) {
     header('location: ../cinechair/?page=login');
-} elseif (isset($_SESSION['email']) && !isset($_SESSION['status'])) {
+} elseif ($_SESSION['status'] == 'Utilisateur') {
     header('location: ../cinechair/');
 }
+
+
 
 require_once "partials/admin_header.php";
 

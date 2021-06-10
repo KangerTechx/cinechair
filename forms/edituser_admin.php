@@ -1,5 +1,10 @@
 <?php
 
+
+if ($_SESSION['status'] !== "Big Boss" ) {
+    header('location: ../cinechair/');
+}
+
 $sql = "SELECT * FROM users
         LEFT JOIN status ON status_id = s_id
         WHERE id = :id";
