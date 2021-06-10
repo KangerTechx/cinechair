@@ -261,6 +261,18 @@ h1 {
     background-color: #980000 !important;
 }
 
+.eyes {
+    position: absolute;
+    right: 0;
+    width: 10%;
+    display: flex;
+    justify-content: flex-end;
+    transform: translateY(100%);
+}
+.eyes i {
+    color: #fff !important;
+}
+
 
 /* -- Edit profil user -- */
 

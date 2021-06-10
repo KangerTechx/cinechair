@@ -18,12 +18,15 @@
                             </label>
                         </div>
                         <div class="form-group formCustom mb-3">
+                            <div class="eyes">
+                                <i class="bi bi-eye-fill" id="seeText" onclick="seeMdp()"></i>
+                                <i class="bi bi-eye-slash-fill lost" id="seePass" onclick="seeMdp()"></i>
+                            </div>
                             <input type="password" name="password" id="password" required>
                             <label for="password" class="label">
                                 <span class="labelContent">Password</span>
                             </label>
                         </div>
-
                         <button type="submit" class="btn">Connexion</button>
                     </form>
                     <p class="mt-5"><a href="?">Mot de passe oublié ?</a></p>

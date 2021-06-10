@@ -22,10 +22,20 @@ $editUsers = $stmt->fetchAll();
     <div class="row">
         <div class="col-md-8 offset-md-2">
             <h2 class="display-5 my-5">Modifier un utilisateur</h2>
-            <form action="src/edituser_admin.php" method="post" class="mt-4">
+            <form action="src/edituser_admin.php" method="post" enctype="multipart/form-data" class="mt-4">
                 <div class="form-group mb-4">
-                    <label for="profil" class="form-label title-label">Photo de profil</label>
-                    <input type="text" class="form-control" id="profil" name="profil" value="<?= $user->profil ?>">
+                    <label class="form-label mb-4 title-label">Avatar</label>
+                    <div class="d-flex flex-wrap">
+                        <div class="d-flex justify-content-center col-12 offset-md-1 col-lg-4">
+                            <img src="assets/img/profil/<?= $user->profil ?>" alt="<?= $user->name ?>" class="edit-profil">
+                        </div>
+                        <div class="form-group col-12 col-lg-6 offset-lg-1">
+                            <label for="profil" class="form-label">Avatar actuel :</label>
+                            <input type="text" class="form-control mb-4" id="profil" value="<?= $user->profil ?>" disabled>
+                            <label for="newProfil" class="form-label">Télécharger une nouvel avatar :</label>
+                            <input type="file" class="form-control mb-4" id="newProfil" name="newProfil">
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group mb-4">
                     <label for="name" class="form-label title-label">Nom de l'utilisateur</label>
