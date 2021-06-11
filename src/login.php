@@ -17,6 +17,7 @@ if($login) {
     if(password_verify($_POST['password'], $login->password)) {
         session_start();
             $_SESSION = [
+                'id'            =>$login->id,
                 'name'          => $login->name,
                 'first-name'    => $login->first_name,
                 'email'         => $login->email,

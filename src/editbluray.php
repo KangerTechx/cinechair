@@ -22,7 +22,7 @@ $sql = "UPDATE bluray SET cover = :cover, name = :name, price = :price, type_id 
 
 $stmt = $dbh->prepare($sql);
 $stmt->bindValue('id', $_POST['id'], PDO::PARAM_INT);
-$stmt->bindValue('cover', !empty($_FILES['newCover']['name']) ? $_FILES['newCover']['name'] : $_POST['cover']);
+$stmt->bindValue('cover', !empty($_FILES['newCover']['name']) ? $_FILES['newCover']['name'] : $cover->cover);
 $stmt->bindValue('name', $_POST['name'], PDO::PARAM_STR);
 $stmt->bindValue('price', $_POST['price'], PDO::PARAM_INT);
 $stmt->bindValue('type', $_POST['type'], PDO::PARAM_INT);
